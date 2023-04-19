@@ -4,6 +4,7 @@ import {
   en,
   Locales,
 } from '@/locales';
+import { ref } from 'vue';
 
 export interface Translator {
   locale: string;
@@ -13,21 +14,24 @@ export interface Translator {
   tr (): Locales;
 }
 
-const translatorLibrary: Translator = {
-  locale: process.env.VUE_APP_LOCALE || 'pl',
-  locales: {
+const createTranslatorLibrary = () => {
+  const locale = ref(process.env.VUE_APP_LOCALE || 'pl')
+  const locales: Record<string, Locales> = {
     pl,
     en,
-  },
-  tr() {
-    return this.locales[this.locale];
-  },
-};
+  };
+  const tr = () => locales[locale.value]
+  return {
+    locale,
+    locales,
+    tr,
+  }
+}
 
 export const translatorSymbol = Symbol('translator');
 
 export const translator = (Vue: App) => {
-  const i = reactive(translatorLibrary);
+  const i = createTranslatorLibrary();
   Vue.provide(translatorSymbol, i);
 };
 
