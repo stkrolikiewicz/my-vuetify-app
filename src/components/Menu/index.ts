@@ -1,0 +1,1 @@
+export {VMenu as Menu} from 'vuetify/components'

@@ -1,0 +1,1 @@
+export {default as SideNav} from './component.vue'

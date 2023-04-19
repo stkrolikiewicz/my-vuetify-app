@@ -1,0 +1,1 @@
+export {default as UserExternalLinks} from './component.vue'

@@ -1,0 +1,1 @@
+export {VTextField as TextField} from 'vuetify/components'

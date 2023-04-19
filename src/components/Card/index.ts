@@ -1,0 +1,1 @@
+export {VCard as Card} from 'vuetify/components'

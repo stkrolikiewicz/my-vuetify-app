@@ -1,0 +1,1 @@
+export {VAvatar as Avatar} from 'vuetify/components/VAvatar'
