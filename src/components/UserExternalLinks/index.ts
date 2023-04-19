@@ -1,1 +1,1 @@
-export {default as UserExternalLinks} from './Component.vue'
+export {default as UserExternalLinks} from './component.vue'

@@ -1,1 +1,1 @@
-export {default as SearchInput} from './Component.vue'
+export {default as SearchInput} from './component.vue'
