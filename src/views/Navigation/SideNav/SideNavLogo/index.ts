@@ -1,0 +1,1 @@
+export {default as SideNavLogo} from './Component.vue'

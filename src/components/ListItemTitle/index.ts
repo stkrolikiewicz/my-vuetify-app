@@ -1,0 +1,1 @@
+export { VListItemTitle as ListItemTitle} from 'vuetify/components'

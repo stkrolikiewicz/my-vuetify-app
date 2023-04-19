@@ -1,0 +1,1 @@
+export {VListItem as ListItem} from 'vuetify/components'

@@ -1,0 +1,1 @@
+export {VTable as DataTable} from 'vuetify/components'
