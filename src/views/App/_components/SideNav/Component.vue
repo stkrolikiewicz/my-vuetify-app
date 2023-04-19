@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NavigationDrawer } from './NavigationDrawer'
 import { SideNavLogo } from './SideNavLogo';
-import { SideNavItem } from './_components';
+import { SideNavItem } from './SideNavItem';
 
 const appName = 'MY APP'
 
