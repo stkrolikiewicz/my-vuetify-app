@@ -3,8 +3,12 @@ import { SearchInput } from '@/components';
 import { ToolbarContainer } from './ToolbarContainer';
 import { ToolbarMenu } from './ToolbarMenu'
 import { ToolbarItem } from './_components'
-import { UserExternalLinks } from '@/components';
+import { UserExternalLinks, Button } from '@/components';
+import i18n from '@/plugins/translations'
 
+const changeLocale = () => {
+  i18n.global.locale.value = i18n.global.locale.value === 'pl' ? 'en' : 'pl'
+}
 
 const appName = 'MY APP'
 </script>
@@ -22,6 +26,13 @@ const appName = 'MY APP'
     </ToolbarItem>
     <ToolbarItem>
       <UserExternalLinks />
+    </ToolbarItem>
+    <ToolbarItem>
+      <Button
+        @click="changeLocale"
+      >
+        change lang
+      </Button>
     </ToolbarItem>
     <ToolbarItem>
       <ToolbarMenu />
