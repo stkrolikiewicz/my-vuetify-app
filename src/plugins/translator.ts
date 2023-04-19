@@ -1,18 +1,10 @@
-import { App, inject, reactive } from 'vue';
+import { App, inject } from 'vue';
 import {
   pl,
   en,
   Locales,
 } from '@/locales';
 import { ref } from 'vue';
-
-export interface Translator {
-  locale: string;
-  locales: {
-    [key in string]: Locales;
-  };
-  tr (): Locales;
-}
 
 const createTranslatorLibrary = () => {
   const locale = ref(process.env.VUE_APP_LOCALE || 'pl')
@@ -27,6 +19,8 @@ const createTranslatorLibrary = () => {
     tr,
   }
 }
+
+type Translator = ReturnType<typeof createTranslatorLibrary>
 
 export const translatorSymbol = Symbol('translator');
 

@@ -13,7 +13,7 @@ const locales = [
   'pl',
 ]
 const {locale, tr} = useTranslator()
-const appName = computed(() => tr().app.title)
+const appName = computed(() => tr().app.toolbar.title)
 </script>
 
 <template>
