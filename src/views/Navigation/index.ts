@@ -1,1 +1,0 @@
-export {default as Navigation} from './Component.vue'
