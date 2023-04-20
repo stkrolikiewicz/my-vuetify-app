@@ -4,7 +4,7 @@ import { Button, Card, Icon} from '@/components'
 
 const externalLinks = [
   {name: 'LinkedIn', destination: 'https://www.linkedin.com/in/stanis%C5%82aw-kr%C3%B3likiewicz-b712a31a9', icon: '$mdiLinkedin'},
-  {name: 'GitHub', destination: '/admin', icon: '$mdiGithub'},
+  {name: 'GitHub', destination: 'https://github.com/stkrolikiewicz/my-vuetify-app', icon: '$mdiGithub'},
 ]
 </script>
 
@@ -44,6 +44,12 @@ const externalLinks = [
   align-items: center;
   .button {
     width: 100%;
+  }
+  a {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 </style>

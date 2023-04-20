@@ -1,0 +1,1 @@
+export { VDialog as Dialog } from 'vuetify/components'

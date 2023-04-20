@@ -1,22 +1,36 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home/Home.vue'
-import About from '@/views/About/About.vue'
-import AboutItem from '@/views/About/Item/component.vue'
 
 const routes = [
   {
     path: '/',
-    component: Home,
+    component: () => import('@/views/Home'),
   },
   {
-    path: '/about',
-    component: About,
+    path: '/',
+    component: () => import('@/views/Auth'),
     children: [
       {
-        path: ':id',
-        name: 'AboutItem',
-        component: AboutItem,
+        path: 'login',
+        component: () => import('@/views/Auth/Login'),
+      },
+    ],
+  },
+  {
+    path: '/',
+    component: () => import('@/views/App'),
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/App/Dashboard'),
+      },
+      { 
+        path: 'account',
+        component: () => import('@/views/App/Account'),
+      },
+      {
+        path: 'admin',
+        component: () => import('@/views/App/Admin'),
       },
     ],
   },

@@ -1,1 +1,0 @@
-export {default as ToolbarMenu} from './component.vue'
