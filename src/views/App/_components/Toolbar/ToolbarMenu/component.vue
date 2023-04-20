@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import {Avatar, Button, Menu, Card, Icon} from '@/components'
 import image from '@/assets/logo.png'
+import { useTranslator } from '@/plugins/translator';
+import { computed } from 'vue';
+
+const {tr} = useTranslator()
 
 
-const internalLinks = [
-  {name: 'Account', destination: '/account', variant: 'flat', icon: '$mdiAccountBox'},
-  {name: 'Dashboard', destination: '/dashboard', variant: 'flat', icon: '$mdiViewDashboard'},
-  {name: 'Admin', destination: '/admin', variant: 'flat', icon: '$mdiGavel'},
-  {name: 'Logout', destination: '/logout', variant: 'outlined', icon: '$mdiLogout'},
-]
+const internalLinks = computed(() => [
+  {name: tr().app.toolbar.menu.account, destination: '/account', variant: 'flat', icon: '$mdiAccountBox'},
+  {name: tr().app.toolbar.menu.dashboard, destination: '/dashboard', variant: 'flat', icon: '$mdiViewDashboard'},
+  {name: tr().app.toolbar.menu.admin, destination: '/admin', variant: 'flat', icon: '$mdiGavel'},
+  {name: tr().app.toolbar.menu.logout, destination: '/logout', variant: 'outlined', icon: '$mdiLogout'},
+])
 </script>
 
 <template>

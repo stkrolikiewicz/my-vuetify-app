@@ -9,7 +9,6 @@ import { loadFonts } from './webfontloader'
 import vuetify from './vuetify'
 import pinia from '../store'
 import router from '../router'
-import i18n from './translations'
 import { translator } from './translator'
 
 
@@ -22,6 +21,5 @@ export function registerPlugins(app: App) {
     .use(vuetify)
     .use(router)
     .use(pinia)
-    .use(i18n)
     .use(translator)
 }

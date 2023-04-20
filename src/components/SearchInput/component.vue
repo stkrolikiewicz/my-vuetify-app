@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { TextField } from '@/components';
+interface Props {
+  label: string
+}
+
+const props = defineProps<Props>()
+
 </script>
 
 <template>
   <TextField
-    label="Search"
+    :label="props.label"
     prepend-inner-icon="$mdiMagnify"
     color="secondary"
     clearable

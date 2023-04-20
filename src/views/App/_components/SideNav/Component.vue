@@ -2,14 +2,17 @@
 import { NavigationDrawer } from './NavigationDrawer'
 import { SideNavLogo } from './SideNavLogo';
 import { SideNavItem } from './SideNavItem';
+import { useTranslator } from '@/plugins/translator';
+import { computed } from 'vue';
 
-const appName = 'MY APP'
+const {tr} = useTranslator()
+const appName = computed(() => tr().app.toolbar.title)
 
-const navItems = [
-  {title: 'Dashboard', value: 'dashboard', icon: '$mdiViewDashboard'},
-  {title: 'Account', value: 'account', icon: '$mdiAccountBox'},
-  {title: 'Admin', value: 'admin', icon: '$mdiGavel'},
-]
+const navItems = computed(() => [
+  {title:  tr().app.sidenav.dashboard, value: 'dashboard', icon: '$mdiViewDashboard'},
+  {title: tr().app.sidenav.account, value: 'account', icon: '$mdiAccountBox'},
+  {title: tr().app.sidenav.admin, value: 'admin', icon: '$mdiGavel'},
+])
 
 </script>
 

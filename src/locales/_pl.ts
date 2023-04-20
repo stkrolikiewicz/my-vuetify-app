@@ -11,6 +11,18 @@ export const pl: Locales = {
   app: {
     toolbar: {
       title: 'Moja aplikacja',
+      search: 'Szukaj',
+      menu: {
+        dashboard: 'Panel',
+        account: 'Konto',
+        admin: 'Zarządzanie',
+        logout: 'Wyloguj',
+      },
+    },
+    sidenav: {
+      dashboard: 'Panel',
+      account: 'Konto',
+      admin: 'Zarządzanie',
     },
   },
 }
