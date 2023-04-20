@@ -4,9 +4,17 @@ import { SearchInput } from '@/components';
 import { ToolbarContainer } from './ToolbarContainer';
 import { ToolbarMenu } from './ToolbarMenu'
 import { ToolbarItem } from './_components'
+<<<<<<< HEAD:src/views/App/_components/Toolbar/Component.vue
 import { UserExternalLinks } from '@/components';
 import { useTranslator } from '@/plugins/translator';
+=======
+import { UserExternalLinks, Button } from '@/components';
+import i18n from '@/plugins/translations'
+>>>>>>> feature/internationalization:src/views/Navigation/Toolbar/Component.vue
 
+const changeLocale = () => {
+  i18n.global.locale.value = i18n.global.locale.value === 'pl' ? 'en' : 'pl'
+}
 
 const locales = [
   'en',
@@ -40,6 +48,13 @@ const appName = computed(() => tr().app.toolbar.title)
         {{ l }}
       </div>
     </div>
+    <ToolbarItem>
+      <Button
+        @click="changeLocale"
+      >
+        change lang
+      </Button>
+    </ToolbarItem>
     <ToolbarItem>
       <ToolbarMenu />
     </ToolbarItem>
