@@ -1,1 +1,1 @@
-export {default as Table} from './component.vue'
+export {default as Table} from './Component.vue'
