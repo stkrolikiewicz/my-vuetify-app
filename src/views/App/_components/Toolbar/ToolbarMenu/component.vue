@@ -11,7 +11,7 @@ const internalLinks = computed(() => [
   {name: tr().app.toolbar.menu.account, destination: '/account', variant: 'flat', icon: '$mdiAccountBox'},
   {name: tr().app.toolbar.menu.dashboard, destination: '/dashboard', variant: 'flat', icon: '$mdiViewDashboard'},
   {name: tr().app.toolbar.menu.admin, destination: '/admin', variant: 'flat', icon: '$mdiGavel'},
-  {name: tr().app.toolbar.menu.logout, destination: '/logout', variant: 'outlined', icon: '$mdiLogout'},
+  {name: tr().app.toolbar.menu.logout, destination: '/', variant: 'outlined', icon: '$mdiLogout'},
 ])
 </script>
 

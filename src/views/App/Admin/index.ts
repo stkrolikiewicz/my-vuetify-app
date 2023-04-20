@@ -1,1 +1,1 @@
-export {default as Admin} from './Component.vue'
+export { default } from './Component.vue'
