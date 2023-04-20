@@ -14,6 +14,7 @@ const locales = [
 ]
 const {locale, tr} = useTranslator()
 const appName = computed(() => tr().app.toolbar.title)
+const searchLabel = computed(() => tr().app.toolbar.search)
 </script>
 
 <template>
@@ -24,7 +25,7 @@ const appName = computed(() => tr().app.toolbar.title)
       {{ appName }}
     </ToolbarItem>
     <ToolbarItem>
-      <SearchInput />
+      <SearchInput :label="searchLabel" />
       <Card />
     </ToolbarItem>
     <ToolbarItem>

@@ -9,6 +9,18 @@ export interface Locales {
   app: {
     toolbar: {
       title: string;
+      search: string;
+      menu: {
+        dashboard: string;
+        account: string;
+        admin: string;
+        logout: string;
+      }
+    }
+    sidenav: {
+      dashboard: string;
+      account: string;
+      admin: string;
     }
   }
 }
