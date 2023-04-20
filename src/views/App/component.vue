@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { VApp, VMain} from 'vuetify/components';
 import { SideNav, Toolbar } from './_components';
+import { Layout } from '@/components';
 </script>
 
 <template>
@@ -8,7 +9,9 @@ import { SideNav, Toolbar } from './_components';
     <VMain>
       <SideNav />
       <Toolbar />
-      <RouterView />
+      <Layout>
+        <RouterView />
+      </Layout>
     </VMain>
   </VApp>
 </template>

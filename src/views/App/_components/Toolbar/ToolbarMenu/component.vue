@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Avatar, Button, Menu, Card, Icon} from '@/components'
+import {Avatar, Button, Menu, Card, Icon, UserExternalLinks} from '@/components'
 import image from '@/assets/logo.png'
 import { useTranslator } from '@/plugins/translator';
 import { computed } from 'vue';
@@ -23,6 +23,7 @@ const internalLinks = computed(() => [
     <Card
       class="menu"
     >
+      <UserExternalLinks class="hide" />
       <Button
         v-for="(item, i) in internalLinks
         "
@@ -58,6 +59,11 @@ const internalLinks = computed(() => [
 </template>
 
 <style scoped lang="scss">
+  .links {
+      @media (min-width: 768px) {
+          display: none;
+        }
+  }
   .menu {
     height: 100%;
     display: flex;

@@ -21,14 +21,14 @@ const searchLabel = computed(() => tr().app.toolbar.search)
   <ToolbarContainer
     :title="appName"
   >
-    <ToolbarItem class="app-title">
+    <ToolbarItem class="app-title hide">
       {{ appName }}
     </ToolbarItem>
-    <ToolbarItem>
+    <ToolbarItem class="hide">
       <SearchInput :label="searchLabel" />
       <Card />
     </ToolbarItem>
-    <ToolbarItem>
+    <ToolbarItem class="hide">
       <UserExternalLinks />
     </ToolbarItem>
     <div class="locales">
@@ -48,6 +48,12 @@ const searchLabel = computed(() => tr().app.toolbar.search)
 </template>
 
 <style scoped lang="scss">
+
+  .hide {
+    @media (max-width: 768px) {
+        display: none;
+      }
+  }
   .app-title {
     font-size: 1.3rem;
     font-weight: bold;
