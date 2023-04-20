@@ -1,7 +1,7 @@
 <template>
-  <h1>Home</h1>
-  <Button @click="router.push('/login')">
-    Przejdź do logowania
+  <h1>Logowanie</h1>
+  <Button @click="router.push('/dashboard')">
+    Zaloguj
   </Button>
 </template>
 

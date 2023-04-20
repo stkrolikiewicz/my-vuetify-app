@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import {Avatar, Button, Menu, Card, Icon} from '@/components'
 import image from '@/assets/logo.png'
-import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
 
-const { t } = useI18n() // use as global scope
 
-const internalLinks = computed(() => [
+const internalLinks = [
   {name: 'Account', destination: '/account', variant: 'flat', icon: '$mdiAccountBox'},
   {name: 'Dashboard', destination: '/dashboard', variant: 'flat', icon: '$mdiViewDashboard'},
   {name: 'Admin', destination: '/admin', variant: 'flat', icon: '$mdiGavel'},
-  {name:  t('app.toolbar.logout' ), destination: '/logout', variant: 'outlined', icon: '$mdiLogout'},
-])
+  {name: 'Logout', destination: '/logout', variant: 'outlined', icon: '$mdiLogout'},
+]
 </script>
 
 <template>

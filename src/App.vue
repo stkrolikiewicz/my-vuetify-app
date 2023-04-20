@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Navigation } from './views';
 import {useAppStore} from '@/store/app'
 
 const app = useAppStore();
@@ -10,7 +9,5 @@ setTimeout(() => {
 </script>
 
 <template>
-  <Navigation>
-    <RouterView />
-  </Navigation>
+  <RouterView />
 </template>

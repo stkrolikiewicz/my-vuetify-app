@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SideNavItem } from '../_components'
+import { SideNavItem } from '../SideNavItem'
 import { ListItemTitle } from '@/components';
 
 interface Props {

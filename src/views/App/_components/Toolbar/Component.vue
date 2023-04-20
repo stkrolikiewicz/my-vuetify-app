@@ -1,16 +1,19 @@
 <script setup lang="ts">
+import {computed} from 'vue'
 import { SearchInput } from '@/components';
 import { ToolbarContainer } from './ToolbarContainer';
 import { ToolbarMenu } from './ToolbarMenu'
 import { ToolbarItem } from './_components'
-import { UserExternalLinks, Button } from '@/components';
-import i18n from '@/plugins/translations'
+import { UserExternalLinks } from '@/components';
+import { useTranslator } from '@/plugins/translator';
 
-const changeLocale = () => {
-  i18n.global.locale.value = i18n.global.locale.value === 'pl' ? 'en' : 'pl'
-}
 
-const appName = 'MY APP'
+const locales = [
+  'en',
+  'pl',
+]
+const {locale, tr} = useTranslator()
+const appName = computed(() => tr().app.toolbar.title)
 </script>
 
 <template>
@@ -27,13 +30,16 @@ const appName = 'MY APP'
     <ToolbarItem>
       <UserExternalLinks />
     </ToolbarItem>
-    <ToolbarItem>
-      <Button
-        @click="changeLocale"
+    <div class="locales">
+      <div
+        v-for="l of locales"
+        :key="l"
+        :class="['locale', {'locale--active': l === locale}]"
+        @click="locale = l"
       >
-        change lang
-      </Button>
-    </ToolbarItem>
+        {{ l }}
+      </div>
+    </div>
     <ToolbarItem>
       <ToolbarMenu />
     </ToolbarItem>
@@ -45,5 +51,16 @@ const appName = 'MY APP'
     font-size: 1.3rem;
     font-weight: bold;
     white-space: nowrap;
+  }
+  .locales {
+    display: flex;
+    gap: 30px;
+  }
+  .locale {
+    cursor: pointer;
+
+    &--active {
+      font-weight: bold;
+    }
   }
 </style>
