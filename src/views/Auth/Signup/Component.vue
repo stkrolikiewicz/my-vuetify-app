@@ -1,6 +1,6 @@
 <template>
   <Center>
-    <h1>Logowanie</h1>
+    <h1>Stwórz Konto</h1>
     <form @submit.prevent="handleSubmit">
       <input
         name="email"
@@ -13,25 +13,24 @@
         type="password"
       >
       <Button type="submit">
-        Login
+        Sign Up
       </Button>
     </form>
-    <p>Don't have account?</p>
-    <RouterLink to="/signup">
-      Sing Up
+    <p>Already have account?</p>
+    <RouterLink to="/login">
+      Log In
     </RouterLink>
   </Center>
 </template>
 
 <script lang="ts" setup>
 import { Button } from '@/components'
-import { useRouter, RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { Center } from '@/components'
 import { FirebaseError } from '@firebase/util'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 
 const auth = getAuth()
-const router = useRouter()
 
 interface Credentials extends HTMLFormControlsCollection{
   email: HTMLInputElement,
@@ -42,8 +41,8 @@ const handleSubmit = async (e: Event) => {
   const target = e.target as HTMLFormElement
   const {email, password} = target.elements as Credentials
   try {
-    await signInWithEmailAndPassword(auth, email.value, password.value)
-    router.push('/account')
+    await createUserWithEmailAndPassword(auth, email.value, password.value)
+    alert('Account created! You logged in!')
   } catch (err) {
     if (err instanceof FirebaseError)
       alert(err.message)

@@ -3,7 +3,7 @@
     <Center>
       <h1>Home</h1>
       <Button @click="router.push('/login')">
-        Przejdź do logowania
+        Przejdź do aplikacji
       </Button>
     </Center>
   </Layout>
